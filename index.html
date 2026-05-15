@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strive Facility Services | Commercial & End of Lease Cleaning Australia</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#f7f9fc;
+      color:#222;
+      line-height:1.6;
+    }
+
+    /* NAVBAR */
+
+    .navbar{
+      width:100%;
+      padding:18px 70px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:white;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .logo img{
+      height:70px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:35px;
+      list-style:none;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:#222;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+      color:#0077ff;
+    }
+
+    .quote-btn{
+      background:#0077ff;
+      color:white;
+      padding:12px 22px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .quote-btn:hover{
+      background:#005ed1;
+    }
+
+    /* HERO */
+
+    .hero{
+      height:88vh;
+      background:
+      linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.45)),
+      url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1600&q=80');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      padding:0 80px;
+      color:white;
+    }
+
+    .hero-content{
+      max-width:650px;
+    }
+
+    .hero h1{
+      font-size:64px;
+      line-height:1.1;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      font-size:22px;
+      margin-bottom:30px;
+    }
+
+    .hero-btn{
+      display:inline-block;
+      background:#0077ff;
+      color:white;
+      padding:15px 28px;
+      text-decoration:none;
+      border-radius:8px;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .hero-btn:hover{
+      background:#005ed1;
+    }
+
+    /* SECTIONS */
+
+    section{
+      padding:90px 70px;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:42px;
+      margin-bottom:50px;
+      color:#0d2a52;
+    }
+
+    /* SERVICES */
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+      gap:35px;
+    }
+
+    .service-card{
+      background:white;
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 8px 25px rgba(0,0,0,0.08);
+      transition:0.3s;
+    }
+
+    .service-card:hover{
+      transform:translateY(-6px);
+    }
+
+    .service-card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .service-content{
+      padding:25px;
+    }
+
+    .service-content h3{
+      margin-bottom:12px;
+      font-size:26px;
+      color:#0d2a52;
+    }
+
+    .service-content p{
+      color:#555;
+    }
+
+    /* COMMERCIAL */
+
+    .commercial{
+      background:white;
+    }
+
+    .commercial-wrapper{
+      display:flex;
+      align-items:center;
+      gap:60px;
+      flex-wrap:wrap;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    .commercial-image img{
+      width:100%;
+      max-width:550px;
+      border-radius:18px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.12);
+    }
+
+    .commercial-content{
+      flex:1;
+    }
+
+    .commercial-content h2{
+      font-size:42px;
+      margin-bottom:20px;
+      color:#0d2a52;
+    }
+
+    .commercial-content p{
+      margin-bottom:20px;
+      color:#555;
+      font-size:18px;
+    }
+
+    .features{
+      margin-bottom:30px;
+    }
+
+    .features li{
+      list-style:none;
+      margin-bottom:12px;
+      font-size:18px;
+    }
+
+    /* WHY US */
+
+    .why-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .why-card{
+      background:white;
+      padding:35px;
+      border-radius:16px;
+      text-align:center;
+      box-shadow:0 5px 20px rgba(0,0,0,0.06);
+      font-weight:bold;
+      font-size:20px;
+    }
+
+    /* BOOKING */
+
+    .booking{
+      background:#eef5ff;
+      text-align:center;
+    }
+
+    .booking p{
+      margin-bottom:30px;
+      color:#555;
+    }
+
+    form{
+      max-width:650px;
+      margin:auto;
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
+    input,
+    textarea{
+      padding:16px;
+      border:none;
+      border-radius:10px;
+      font-size:16px;
+    }
+
+    textarea{
+      min-height:140px;
+      resize:none;
+    }
+
+    button{
+      padding:16px;
+      border:none;
+      background:#0077ff;
+      color:white;
+      border-radius:10px;
+      font-size:18px;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    button:hover{
+      background:#005ed1;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#0d1c2f;
+      color:white;
+      text-align:center;
+      padding:35px;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:900px){
+
+      .navbar{
+        padding:20px;
+        flex-direction:column;
+        gap:20px;
+      }
+
+      .nav-links{
+        gap:18px;
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero{
+        padding:40px 20px;
+        text-align:center;
+      }
+
+      .hero h1{
+        font-size:44px;
+      }
+
+      section{
+        padding:70px 20px;
+      }
+
+      .commercial-wrapper{
+        flex-direction:column;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav class="navbar">
+
+    <div class="logo">
+      <img src="logo strive.png" alt="Strive Logo">
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#commercial">Commercial</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#book">Contact</a></li>
+    </ul>
+
+    <a href="#book" class="quote-btn">Get a Quote</a>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>Professional Cleaning You Can Trust</h1>
+
+      <p>
+       Strive cleaning for reliable cleaning services for homes, offices,
+        and commercial spaces in ballarat.
+      </p>
+
+      <a href="#book" class="hero-btn">Get a Free Quote</a>
+
+    </div>
+
+  </section>
+
+  <!-- SERVICES -->
+
+  <section id="services">
+
+    <h2 class="section-title">Our Services</h2>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+
+        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80">
+
+        <div class="service-content">
+          <h3>Residential Cleaning</h3>
+          <p>
+            Keep your home fresh, clean, and comfortable
+            with our professional cleaning service.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="service-card">
+
+        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=80">
+
+        <div class="service-content">
+          <h3>Deep Cleaning</h3>
+          <p>
+            Detailed cleaning for kitchens, bathrooms,
+            bedrooms, and every corner of your property.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="service-card">
+
+        <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80">
+
+        <div class="service-content">
+          <h3>End Of Lease</h3>
+          <p>
+            Stress-free cleaning solutions for moving
+            in or out inspections.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- COMMERCIAL -->
+
+  <section class="commercial" id="commercial">
+
+    <div class="commercial-wrapper">
+
+      <div class="commercial-image">
+
+        <img src="https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?auto=format&fit=crop&w=1000&q=80">
+
+      </div>
+
+      <div class="commercial-content">
+
+        <h2>Commercial Cleaning</h2>
+
+        <p>
+          We provide high-quality commercial cleaning services
+          for offices, retail stores, and business spaces.
+          Our team ensures a spotless and professional environment.
+        </p>
+
+        <ul class="features">
+          <li>✔ Office Cleaning</li>
+          <li>✔ Retail Spaces</li>
+          <li>✔ Flexible Scheduling</li>
+          <li>✔ Reliable Team</li>
+        </ul>
+
+        <a href="#book" class="hero-btn">Request Service</a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- WHY US -->
+
+  <section id="why">
+
+    <h2 class="section-title">Why Choose Us</h2>
+
+    <div class="why-grid">
+
+      <div class="why-card">✔ Trusted Team</div>
+
+      <div class="why-card">✔ Affordable Pricing</div>
+
+      <div class="why-card">✔ Fully Insured</div>
+
+      <div class="why-card">✔ Satisfaction Guaranteed</div>
+
+    </div>
+
+  </section>
+
+  <!-- BOOKING -->
+
+  <section class="booking" id="book">
+
+    <h2 class="section-title">Book A Cleaning</h2>
+
+    <p>We’ll get back to you within 24 hours.</p>
+
+    <form action="https://formspree.io/f/xykopdba" method="POST">
+
+      <input type="text" name="name" placeholder="Your Name" required>
+
+      <input type="email" name="email" placeholder="Your Email" required>
+
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+
+      <textarea
+      name="message"
+      placeholder="Tell us what you need cleaned..."
+      required></textarea>
+
+      <button type="submit">Get Free Quote</button>
+
+    </form>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>© 2026 Strive Facility Services Pty Ltd</p>
+
+  </footer>
+
+</body>
+</html>
