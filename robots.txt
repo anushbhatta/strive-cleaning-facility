@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://strivefacility.com.au/strivesitemap.xml
